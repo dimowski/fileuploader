@@ -6,13 +6,15 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,21 +22,29 @@ public class MainServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(MainServlet.class);
 
-    
+    private String filePath;
+
+    public void init() throws ServletException {
+        // Define base path.
+        this.filePath = "/uploadedFiles";
+        log.debug("Servlet initialized");
+        // In a Windows environment with the Applicationserver running on the
+        // c: volume, the above path is exactly the same as "c:\\uploadedFiles".
+        // In UNIX, it is just straightforward "/uploadedFiles".
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Check that we have a file upload request
         boolean isMultipart = ServletFileUpload.isMultipartContent(req);
-        log.debug("Multipart is = " + isMultipart);
-        log.debug("PATH = " + req.getPathInfo());
+        log.debug("Multipart = " + isMultipart);
 
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
 
         // Configure a repository (to ensure a secure temp location is used)
-        ServletContext servletContext = this.getServletConfig().getServletContext();
-        File repository = new File(getServletContext().getInitParameter("upload.location"));
-        log.info(repository);
+        File repository = new File(filePath);
+        log.debug("Repository = " + repository);
         factory.setRepository(repository);
 
         // Create a new file upload handler
@@ -57,21 +67,36 @@ public class MainServlet extends HttpServlet {
                     // Process a file upload
                     String fileName = item.getName();
                     String contentType = item.getContentType();
-                    String fileExtention = fileName.substring(fileName.lastIndexOf('.'));
                     log.debug("fileName is: " + fileName + ", content type is: " + contentType);
+
+                    String fileExtention = fileName.substring(fileName.lastIndexOf('.'));
                     File uploadedFile = new File(repository, newFileName + fileExtention);
                     item.write(uploadedFile);
                 }
             }
         } catch (Exception e) {
             log.error(e);
-            e.printStackTrace();
         }
-        File[] files = new File(getServletContext().getInitParameter("upload.location")).listFiles();
-        for(File tmp : files) {
+        //Get the list of all files
+        String[] files = new File(filePath).list();
+        for (String tmp : files) {
             log.debug("file is: " + tmp);
         }
-        req.setAttribute("IMAGES_LIST", files);
+
+        req.getSession().setAttribute("IMAGES_LIST", files);
         resp.sendRedirect("listImages.jsp");
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String requestedFile = filePath + req.getPathInfo();
+        log.debug("Requested file = " + requestedFile);
+
+        byte[] image = Files.readAllBytes(Paths.get(requestedFile));
+
+        resp.setContentType("image/jpg");
+        BufferedOutputStream out = new BufferedOutputStream(resp.getOutputStream());
+        out.write(image);
+        out.close();
     }
 }
