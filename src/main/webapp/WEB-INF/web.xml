@@ -9,13 +9,14 @@
     <param-name>upload.location</param-name>
     <param-value>D://uploadFiles/</param-value>
   </context-param>
-  
+
   <servlet>
     <servlet-name>MainServlet</servlet-name>
     <servlet-class>com.servlets.MainServlet</servlet-class>
   </servlet>
+
   <servlet-mapping>
     <servlet-name>MainServlet</servlet-name>
-    <url-pattern>/MainServlet</url-pattern>
+    <url-pattern>/upload/*</url-pattern>
   </servlet-mapping>
 </web-app>

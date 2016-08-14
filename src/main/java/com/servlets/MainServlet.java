@@ -20,10 +20,13 @@ public class MainServlet extends HttpServlet {
 
     private static final Logger log = LogManager.getLogger(MainServlet.class);
 
+    
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         boolean isMultipart = ServletFileUpload.isMultipartContent(req);
-        log.info("Multipart is = " + isMultipart);
+        log.debug("Multipart is = " + isMultipart);
+        log.debug("PATH = " + req.getPathInfo());
 
         // Create a factory for disk-based file items
         DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -41,7 +44,7 @@ public class MainServlet extends HttpServlet {
         String newFileName = null;
         try {
             List<FileItem> items = upload.parseRequest(req);
-            log.info("items size is " + items.size());
+            log.debug("items size is " + items.size());
 
             // Process the uploaded items
             Iterator<FileItem> iter = items.iterator();
@@ -49,13 +52,13 @@ public class MainServlet extends HttpServlet {
                 FileItem item = iter.next();
                 if (item.isFormField()) {
                     newFileName = item.getString();
-                    log.info("value " + newFileName);
+                    log.debug("value " + newFileName);
                 } else {
                     // Process a file upload
                     String fileName = item.getName();
                     String contentType = item.getContentType();
                     String fileExtention = fileName.substring(fileName.lastIndexOf('.'));
-                    log.info("fileName is: " + fileName + ", content type is: " + contentType);
+                    log.debug("fileName is: " + fileName + ", content type is: " + contentType);
                     File uploadedFile = new File(repository, newFileName + fileExtention);
                     item.write(uploadedFile);
                 }
@@ -64,5 +67,11 @@ public class MainServlet extends HttpServlet {
             log.error(e);
             e.printStackTrace();
         }
+        File[] files = new File(getServletContext().getInitParameter("upload.location")).listFiles();
+        for(File tmp : files) {
+            log.debug("file is: " + tmp);
+        }
+        req.setAttribute("IMAGES_LIST", files);
+        resp.sendRedirect("listImages.jsp");
     }
 }
