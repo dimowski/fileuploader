@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e03de590-ad6b-4b71-98ab-3e1e4e2f4f55" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/servlets/MainServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/servlets/MainServlet.java" />
     </list>
     <ignored path="fileUploader.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="MainServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/MainServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,9 +52,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-              <folding>
-                <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -921,12 +918,12 @@
       <workItem from="1471079406088" duration="1553000" />
       <workItem from="1471081988732" duration="12103000" />
       <workItem from="1471095200516" duration="7799000" />
-      <workItem from="1471160333397" duration="14178000" />
+      <workItem from="1471160333397" duration="17177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50421000" />
+    <option name="totallyTimeSpent" value="53420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1011,9 +1008,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,9 +1064,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1127,9 +1120,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,9 +1162,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,9 +1204,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,9 +1256,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1369,20 +1354,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <marker date="1471180767513" expanded="true" signature="137:614" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1397,8 +1380,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/MainServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
