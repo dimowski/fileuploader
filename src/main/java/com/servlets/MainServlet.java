@@ -44,6 +44,8 @@ public class MainServlet extends HttpServlet {
 
         // Configure a repository (to ensure a secure temp location is used)
         File repository = new File(filePath);
+        if (!repository.exists())
+            repository.mkdir();
         log.debug("Repository = " + repository);
         factory.setRepository(repository);
 
