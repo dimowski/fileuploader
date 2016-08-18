@@ -26,7 +26,7 @@ public class MainServlet extends HttpServlet {
 
     public void init() throws ServletException {
         // Define base path.
-        this.filePath = /*System.getProperty("user.home") +*/ "/uploadedFiles";
+        this.filePath = System.getProperty("user.home") + "/uploadedFiles";
         log.debug("Servlet initialized");
         // In a Windows environment with the Applicationserver running on the
         // c: volume, the above path is exactly the same as "c:\\uploadedFiles".
