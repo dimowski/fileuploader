@@ -81,9 +81,9 @@ public class MainServlet extends HttpServlet {
         }
         //Get the list of all files
         String[] files = new File(filePath).list();
-        for (String tmp : files) {
+        /*for (String tmp : files) {
             log.debug("file is: " + tmp);
-        }
+        }*/
 
         req.getSession().setAttribute("IMAGES_LIST", files);
         resp.sendRedirect("listImages.jsp");
